@@ -15,6 +15,24 @@ menuBurger = function () {
 }
 
 
-
-
 iconBurger.addEventListener('click', menuBurger)
+
+
+
+const divArrow = document.querySelector('div.scroll-up');
+
+window.addEventListener('scroll', function () {
+	if (window.scrollY > 150) {
+		divArrow.classList.add('active');
+	} else {
+		divArrow.classList.remove('active');
+	}
+})
+
+divArrow.addEventListener('click', function () {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	})
+
+})
