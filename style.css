@@ -320,6 +320,15 @@ div.scroll-up i {
 
 }
 
+h1.mail-message {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	font-size: 60px;
+	font-family: 'Big Shoulders Display', cursive;
+}
+
 @media(min-width: 460px) {
 	div.img-main {
 		height: 250px;

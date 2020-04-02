@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,12 +43,6 @@
 			</nav>
 		</section>
 		<div class="move">
-			<form method="post" name="contactform" action="mail.php">
-				<input class="name" type="text" name="name" id="name" placeholder="Imię" required>
-				<input class="email" type="email" name="email" id="email" placeholder="E-mail" required>
-				<textarea class="message" name="message" id="message" placeholder="Treść wiadomości" required></textarea>
-				<button class="submit" type="submit" name="submit">Wyślij</button>
-			</form>
 		</div>
 		<div class="scroll-up">
 			<i class="fas fa-arrow-up"></i>
@@ -56,6 +51,18 @@
 	<footer>
 		<p>&copy; Żaneta Szałańska 2020</p>
 	</footer>
+	<?php
+$to      = 'zaneta.szalanska@gmail.com';
+$name    = $_POST['name'];
+$email   = $_POST['email'];
+$subject = 'Nowy email od ' . $name . ' (' . $email . ')';
+$message = $_POST['message'];
+$headers = 'From: ' . $name . ' (' . $email . ')';
+
+mail($to, $subject, $message, $headers);
+
+echo '<h1 class="mail-message">Wiadomość wysłana</h1>';
+?>
 	<script src="main.js"></script>
 </body>
 
